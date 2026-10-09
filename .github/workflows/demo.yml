@@ -9,6 +9,8 @@ jobs:
 
     steps:
       - name: print hello world
-        run: echo "hello vcube"
+        run: |
+           echo "hello vcube"
+           echo "hello srinivas"
        
     
