@@ -1,25 +1,8 @@
 name: Hello world
 on: push
-pull_request:
-brances:
-  -main 
 jobs:
   build: 
     runs-on: ubuntu-latest
     steps:
       - name: Hello Step
-        run: echo "hello build"
-
-  test: 
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Hello Step
-        run: echo "hello test"
-
-  deploy: 
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Hello Step
-        run: echo "hello deploymentsrinivas"
+        run: echo "Hello, ${{vars.MY_NAME}}"
