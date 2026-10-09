@@ -1,16 +1,26 @@
 
+
 name: Helloworld
 
 on: workflow_dispatch
 
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: print hello world
-        run: |
-           echo "hello vcube"
-           echo "hello srinivas"
-       
-    
+      - name: Print build message
+        run: echo "build jobs"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print test message
+        run: echo "test jobs"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print deploy message
+        run: echo "deploy jobs"
